@@ -52,7 +52,7 @@
 
 #endif
 
-
+#define EXAMPLE_ITESO_SERVER_HOST "www.iteso.mx"
 
 /* MAC address configuration. */
 #define configMAC_ADDR                     \
@@ -93,6 +93,8 @@
 
 static mdio_handle_t mdioHandle = {.ops = &EXAMPLE_MDIO_OPS};
 static phy_handle_t phyHandle   = {.phyAddr = EXAMPLE_PHY_ADDRESS, .mdioHandle = &mdioHandle, .ops = &EXAMPLE_PHY_OPS};
+static ip_addr_t iteso_addr;
+
 
 /*******************************************************************************
  * Code
@@ -169,6 +171,11 @@ static void print_dhcp_state(void *arg)
                 PRINTF(" IPv4 Subnet mask : %s\r\n", ipaddr_ntoa(&netif->netmask));
                 PRINTF(" IPv4 Gateway     : %s\r\n\r\n", ipaddr_ntoa(&netif->gw));
             }
+
+
+
+            PRINTF("Resolving \"%s\"...\r\n", EXAMPLE_ITESO_SERVER_HOST);
+            err = netconn_gethostbyname(EXAMPLE_ITESO_SERVER_HOST, &iteso_addr);
         }
 
         sys_msleep(20U);

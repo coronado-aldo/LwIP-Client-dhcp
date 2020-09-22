@@ -2,7 +2,6 @@ source/lwip_tcpecho_freertos.o source/lwip_tcpecho_freertos.d: \
  ../source/lwip_tcpecho_freertos.c \
  C:\Users\coron\Documents\MCUXpressoIDE_11.2.0_4120\workspace\LwIP\ Client\ dhcp\LwIP\ Client\ dhcp\frdmk64f_lwip_tcpecho_freertos_HandsOn_Client\lwip\src\include/lwip/opt.h \
  C:\Users\coron\Documents\MCUXpressoIDE_11.2.0_4120\workspace\LwIP\ Client\ dhcp\LwIP\ Client\ dhcp\frdmk64f_lwip_tcpecho_freertos_HandsOn_Client\source/lwipopts.h \
- C:\Users\coron\Documents\MCUXpressoIDE_11.2.0_4120\workspace\LwIP\ Client\ dhcp\LwIP\ Client\ dhcp\frdmk64f_lwip_tcpecho_freertos_HandsOn_Client\lwip\src\include/lwip/debug.h \
  C:\Users\coron\Documents\MCUXpressoIDE_11.2.0_4120\workspace\LwIP\ Client\ dhcp\LwIP\ Client\ dhcp\frdmk64f_lwip_tcpecho_freertos_HandsOn_Client\lwip\src\include/lwip/arch.h \
  C:\Users\coron\Documents\MCUXpressoIDE_11.2.0_4120\workspace\LwIP\ Client\ dhcp\LwIP\ Client\ dhcp\frdmk64f_lwip_tcpecho_freertos_HandsOn_Client\lwip\port/arch/cc.h \
  C:\Users\coron\Documents\MCUXpressoIDE_11.2.0_4120\workspace\LwIP\ Client\ dhcp\LwIP\ Client\ dhcp\frdmk64f_lwip_tcpecho_freertos_HandsOn_Client\lwip\port/arch/sys_arch.h \
@@ -34,6 +33,7 @@ source/lwip_tcpecho_freertos.o source/lwip_tcpecho_freertos.d: \
  C:\Users\coron\Documents\MCUXpressoIDE_11.2.0_4120\workspace\LwIP\ Client\ dhcp\LwIP\ Client\ dhcp\frdmk64f_lwip_tcpecho_freertos_HandsOn_Client\freertos\freertos_kernel\include/task.h \
  C:\Users\coron\Documents\MCUXpressoIDE_11.2.0_4120\workspace\LwIP\ Client\ dhcp\LwIP\ Client\ dhcp\frdmk64f_lwip_tcpecho_freertos_HandsOn_Client\freertos\freertos_kernel\include/semphr.h \
  C:\Users\coron\Documents\MCUXpressoIDE_11.2.0_4120\workspace\LwIP\ Client\ dhcp\LwIP\ Client\ dhcp\frdmk64f_lwip_tcpecho_freertos_HandsOn_Client\freertos\freertos_kernel\include/queue.h \
+ C:\Users\coron\Documents\MCUXpressoIDE_11.2.0_4120\workspace\LwIP\ Client\ dhcp\LwIP\ Client\ dhcp\frdmk64f_lwip_tcpecho_freertos_HandsOn_Client\lwip\src\include/lwip/debug.h \
  C:\Users\coron\Documents\MCUXpressoIDE_11.2.0_4120\workspace\LwIP\ Client\ dhcp\LwIP\ Client\ dhcp\frdmk64f_lwip_tcpecho_freertos_HandsOn_Client\lwip\contrib\apps\tcpecho/tcpecho.h \
  C:\Users\coron\Documents\MCUXpressoIDE_11.2.0_4120\workspace\LwIP\ Client\ dhcp\LwIP\ Client\ dhcp\frdmk64f_lwip_tcpecho_freertos_HandsOn_Client\lwip\src\include/lwip/netifapi.h \
  C:\Users\coron\Documents\MCUXpressoIDE_11.2.0_4120\workspace\LwIP\ Client\ dhcp\LwIP\ Client\ dhcp\frdmk64f_lwip_tcpecho_freertos_HandsOn_Client\lwip\src\include/lwip/sys.h \
@@ -94,8 +94,6 @@ source/lwip_tcpecho_freertos.o source/lwip_tcpecho_freertos.d: \
 C:\Users\coron\Documents\MCUXpressoIDE_11.2.0_4120\workspace\LwIP\ Client\ dhcp\LwIP\ Client\ dhcp\frdmk64f_lwip_tcpecho_freertos_HandsOn_Client\lwip\src\include/lwip/opt.h:
 
 C:\Users\coron\Documents\MCUXpressoIDE_11.2.0_4120\workspace\LwIP\ Client\ dhcp\LwIP\ Client\ dhcp\frdmk64f_lwip_tcpecho_freertos_HandsOn_Client\source/lwipopts.h:
-
-C:\Users\coron\Documents\MCUXpressoIDE_11.2.0_4120\workspace\LwIP\ Client\ dhcp\LwIP\ Client\ dhcp\frdmk64f_lwip_tcpecho_freertos_HandsOn_Client\lwip\src\include/lwip/debug.h:
 
 C:\Users\coron\Documents\MCUXpressoIDE_11.2.0_4120\workspace\LwIP\ Client\ dhcp\LwIP\ Client\ dhcp\frdmk64f_lwip_tcpecho_freertos_HandsOn_Client\lwip\src\include/lwip/arch.h:
 
@@ -158,6 +156,8 @@ C:\Users\coron\Documents\MCUXpressoIDE_11.2.0_4120\workspace\LwIP\ Client\ dhcp\
 C:\Users\coron\Documents\MCUXpressoIDE_11.2.0_4120\workspace\LwIP\ Client\ dhcp\LwIP\ Client\ dhcp\frdmk64f_lwip_tcpecho_freertos_HandsOn_Client\freertos\freertos_kernel\include/semphr.h:
 
 C:\Users\coron\Documents\MCUXpressoIDE_11.2.0_4120\workspace\LwIP\ Client\ dhcp\LwIP\ Client\ dhcp\frdmk64f_lwip_tcpecho_freertos_HandsOn_Client\freertos\freertos_kernel\include/queue.h:
+
+C:\Users\coron\Documents\MCUXpressoIDE_11.2.0_4120\workspace\LwIP\ Client\ dhcp\LwIP\ Client\ dhcp\frdmk64f_lwip_tcpecho_freertos_HandsOn_Client\lwip\src\include/lwip/debug.h:
 
 C:\Users\coron\Documents\MCUXpressoIDE_11.2.0_4120\workspace\LwIP\ Client\ dhcp\LwIP\ Client\ dhcp\frdmk64f_lwip_tcpecho_freertos_HandsOn_Client\lwip\contrib\apps\tcpecho/tcpecho.h:
 

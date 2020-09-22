@@ -193,6 +193,15 @@ void sys_mark_tcpip_thread(void);
 #define LWIP_DHCP 1
 #endif
 
+/* ---------- DNS options ----------- */
+/**
+ * LWIP_DNS==1: Turn on DNS module. UDP must be available for DNS
+ * transport.
+ */
+#if !defined LWIP_DNS || defined __DOXYGEN__
+#define LWIP_DNS 1
+#endif
+
 /* ---------- UDP options ---------- */
 #ifndef LWIP_UDP
 #define LWIP_UDP 1

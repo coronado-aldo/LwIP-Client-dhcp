@@ -1,2 +1,0 @@
-lwip_tcpecho_freertos.c:105:13:print_dhcp_state	32	static
-lwip_tcpecho_freertos.c:184:5:main	56	static
