@@ -56,7 +56,7 @@
    the application */
 
 #include "lwip/opt.h"
-
+#include "lwipopts.h"
 #if LWIP_NETCONN /* don't build if not configured for use in lwipopts.h */
 
 #include "lwip/api.h"

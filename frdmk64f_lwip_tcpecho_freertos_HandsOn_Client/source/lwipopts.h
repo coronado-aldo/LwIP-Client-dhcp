@@ -4,7 +4,7 @@
  * This file is based on \src\include\lwip\opt.h
  ******************************************************************************
  * Copyright (c) 2013-2016, Freescale Semiconductor, Inc.
- * Copyright 2016-2018 NXP
+ * Copyright 2016-2019 NXP
  * All rights reserved.
  *
  * SPDX-License-Identifier: BSD-3-Clause
@@ -183,6 +183,11 @@ void sys_mark_tcpip_thread(void);
 /* ---------- ICMP options ---------- */
 #ifndef LWIP_ICMP
 #define LWIP_ICMP 1
+#endif
+
+/* ---------- RAW options ---------- */
+#if !defined LWIP_RAW
+#define LWIP_RAW 1
 #endif
 
 /* ---------- DHCP options ---------- */

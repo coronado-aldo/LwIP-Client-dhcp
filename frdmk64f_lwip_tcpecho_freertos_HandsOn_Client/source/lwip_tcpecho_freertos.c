@@ -17,6 +17,8 @@
 #include "tcpecho.h"
 #include "lwip/netifapi.h"
 #include "lwip/tcpip.h"
+#include "lwip/sys.h"
+#include "lwip/api.h"
 #include "netif/ethernet.h"
 #include "enet_ethernetif.h"
 #include "lwip/prot/dhcp.h"
@@ -52,7 +54,7 @@
 
 #endif
 
-#define EXAMPLE_ITESO_SERVER_HOST "www.iteso.mx"
+#define EXAMPLE_ITESO_SERVER_HOST "iteso.mx"
 
 /* MAC address configuration. */
 #define configMAC_ADDR                     \
@@ -109,6 +111,7 @@ static void print_dhcp_state(void *arg)
     struct netif *netif = (struct netif *)arg;
     struct dhcp *dhcp;
     u8_t dhcp_last_state = DHCP_STATE_OFF;
+    err_t err;
 
     while (netif_is_up(netif))
     {
@@ -170,12 +173,25 @@ static void print_dhcp_state(void *arg)
                 PRINTF("\r\n IPv4 Address     : %s\r\n", ipaddr_ntoa(&netif->ip_addr));
                 PRINTF(" IPv4 Subnet mask : %s\r\n", ipaddr_ntoa(&netif->netmask));
                 PRINTF(" IPv4 Gateway     : %s\r\n\r\n", ipaddr_ntoa(&netif->gw));
+
+                PRINTF("Servidor DNS: \"%s\"...\r\n", ipaddr_ntoa(dns_getserver(0)));
+
+                PRINTF("Resolving \"%s\"...\r\n", EXAMPLE_ITESO_SERVER_HOST);
+
+                err = netconn_gethostbyname(EXAMPLE_ITESO_SERVER_HOST, &iteso_addr);
+
+                if(err == ERR_OK)
+                {
+                	PRINTF("Direccion: %s \r\n",ipaddr_ntoa(&iteso_addr));
+                }
+                else
+                {
+                	PRINTF("Error al resolver: %d\n", err);
+                }
+
+                tcpecho_init();
+
             }
-
-
-
-            PRINTF("Resolving \"%s\"...\r\n", EXAMPLE_ITESO_SERVER_HOST);
-            err = netconn_gethostbyname(EXAMPLE_ITESO_SERVER_HOST, &iteso_addr);
         }
 
         sys_msleep(20U);
@@ -233,8 +249,6 @@ int main(void)
 	{
 		LWIP_ASSERT("stack_init(): Task creation failed.", 0);
 	}
-
-    tcpecho_init();
 
     vTaskStartScheduler();
 

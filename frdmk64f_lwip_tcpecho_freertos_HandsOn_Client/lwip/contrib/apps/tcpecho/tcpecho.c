@@ -43,7 +43,7 @@
 #define configIP_ADDR0_Serv 192
 #define configIP_ADDR1_Serv 168
 #define configIP_ADDR2_Serv 0
-#define configIP_ADDR3_Serv 100
+#define configIP_ADDR3_Serv 18
 
 /*-----------------------------------------------------------------------------------*/
 static void
@@ -77,21 +77,35 @@ tcpecho_thread(void *arg)
 	while (1)
 	{
 		conn = netconn_new(NETCONN_TCP);
-		netconn_connect(conn, &netif_ipaddr_Server, PORT);
-		printf("Conectado \n");
+		err = netconn_connect(conn, &netif_ipaddr_Server, PORT);
 
-		printf("Escribiendo %d datos\n", len);
+		if(err == ERR_OK)
+		{
+			printf("Conectado \n");
 
-		err = netconn_write(conn, data, len, NETCONN_COPY);
-		printf("Escrito \"%s\"\n", myData);
+			printf("Escribiendo %d datos\n", len);
 
-		//err = netconn_recv(newconn, &buf)
-		//netbuf_data(buf, &data, &len);
+			err = netconn_write(conn, data, len, NETCONN_COPY);
+			printf("Escrito \"%s\"\n", myData);
 
-		netconn_close(conn);
-		netconn_delete(conn);
+			err = netconn_recv(conn, &buf);
+			netbuf_data(buf, &data, &len);
+			printf("Recibido \"%s\"\n", data);
 
-		vTaskDelay(20000);
+
+			netconn_close(conn);
+			netconn_delete(conn);
+
+			vTaskDelay(20000);
+		}
+		else
+		{
+			printf("Error al conectar: %d\n", err);
+
+			break;
+		}
+
+
 
 	}
 }
